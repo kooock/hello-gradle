@@ -2,7 +2,6 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.0.0'
 	id 'io.spring.dependency-management' version '1.1.0'
-	id "com.microsoft.azure.azurewebapp" version "1.7.1"
 }
 
 group = 'com.mysite'
@@ -23,25 +22,4 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
-}
-
-azurewebapp {
-    subscription = 'c8408834-8720-4cd9-af75-3b277ddbfe91'
-    resourceGroup = 'azure204lecture'
-    appName = 'hello-gradle-1234124128235'
-    pricingTier = 'P1v2'
-    region = 'koreasouth'
-    runtime {
-      os = 'Linux'
-      webContainer = 'Java SE' // or 'Tomcat 9.0' if you want to run an executable war
-      javaVersion = 'Java 17'
-    }
-    appSettings {
-        JAVA_OPTS = '-Xms3072m -Xmx3072m'
-        JAVA_OPTS = '-Dfile.encoding=UTF-8'
-        JAVA_OPTS = '-Dserver.port=80'
-    }
-    auth {
-        type = 'azure_cli' // support azure_cli, oauth2, device_code and service_principal
-    }
 }
