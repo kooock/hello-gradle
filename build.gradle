@@ -13,6 +13,10 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+    archiveFileName = 'app.jar'
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -26,7 +30,6 @@ tasks.named('test') {
 }
 
 azurewebapp {
-    archiveFileName = 'app.jar'
     subscription = 'c8408834-8720-4cd9-af75-3b277ddbfe91'
     resourceGroup = 'azure204lecture'
     appName = 'hello-gradle-1234124128235'
