@@ -13,10 +13,6 @@ repositories {
 	mavenCentral()
 }
 
-jar {
-    archiveFileName = 'app.jar'
-}
-
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -38,7 +34,7 @@ azurewebapp {
     runtime {
       os = 'Linux'
       webContainer = 'Java SE' // or 'Tomcat 9.0' if you want to run an executable war
-      javaVersion = 'Java 8'
+      javaVersion = 'Java 17'
     }
     appSettings {
         JAVA_OPTS = '-Xms3072m -Xmx3072m'
